@@ -1,0 +1,38 @@
+@tailwind base; /*css reset atau default*/
+@tailwind components; /*menambahkan clas clas komponen jika ada atau clas dari plugin*/
+@tailwind utilities; /*generate class utility yang digunakan oleh tailwind menjadi css agar bisa di baca oleh browser*/
+
+/* @layer digunakan ketika ingin memodifikasi perilaku bawaan tailwind */
+/* @apply digunakan untuk memanggil utility tailwind untuk dimasukan ke css custom */
+/* @theme digunakan untuk memanggil nilai nilai dari config theme */
+
+@layer base {
+  /* tambahkan css reset custom disini */
+
+  /* menggunakan @apply */
+  h1 {
+    @apply text-8xl;
+    color: theme(colors.wpu);
+  }
+
+  /* tanpa @apply/css native */
+  /* h1 {
+    font-size: 6rem;
+  } */
+}
+
+@layer components {
+  /* tambahkan komponen yg sudah di custom css disini seperti komponen card */
+  .grid-card {
+    @apply bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden
+            relative hover:scale-95 transition-all duration-700 ease-in-out delay-75;
+  }
+
+  .grid-card-img {
+    @apply w-full h-full bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 ease-in-out delay-75;
+  }
+}
+
+@layer utilities {
+  /* tambahkan utility custom untuk membuat utility yang kita inginkan */
+}
