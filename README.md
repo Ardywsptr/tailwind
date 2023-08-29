@@ -28,7 +28,7 @@
 
 ## Requierement :
 
-* **code editor*
+* **code editor**
 * **web browser**
 
 <br clear="both">
